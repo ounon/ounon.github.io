@@ -3,7 +3,7 @@ let dateChart = dc.barChart("#date-chart");
 let phaseChart = dc.barChart("#phase-chart");
 let fatalityChart = dc.pieChart("#fatality-chart");
 
-d3.csv("/story/data/data-crashes.csv", function(flights) {
+d3.csv("/data/data-crashes.csv", function(flights) {
 
     flights.forEach(function(d) {
         d.Fatalities = +d.Fatalities;
