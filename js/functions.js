@@ -36,9 +36,6 @@ function fillMap(selection, color, data) {
     d3.selectAll("svg#map path title")
       .call(setPathTitle, mapcountry);
   
-    // update headline
-    //d3.select("h2").text(headline + d3.select("#year").node().value);
-    // render legend
     updateLegend(color, mapcountry);
     renderLegend(color, mapcountry);
   }
@@ -157,11 +154,8 @@ function fillMap(selection, color, data) {
 
       let scale = d3.scale.quantile()
                   .domain(quantiles_calc)
-                  //.range(d3.schemeReds[(quantiles_calc.length)-1])
                   .range(colorbrewer.Reds[(quantiles_calc.length)-1]);
-      /*let scale = d3.scale.threshold()
-                  .domain()
-                  ;*/
+
     
       return scale;
     }
