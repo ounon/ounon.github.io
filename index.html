@@ -76,7 +76,27 @@
             <div class="p-5">
               <h3 class="display-4"></h2> <br>
               <p>
-				blabla...
+				<p id="text">
+					Depuis les années 50, de nombreux crashs se sont succédés dans les quatres coins du monde causant ainsi plusieurs morts
+					et disparus. Ces crashs sont souvent du à des erreurs, des attentats, la condition météorologique... <br/>
+					Nous avons donc décidé, de faire une statistique des crashs qui ont eu lieu depuis 2008 jusqu'à aujourd'hui. Ainsi nous 
+					avons utilisé les données d'accidents fourni par le site <a href="https://www.icao.int/safety/iStars/Pages/API-Data-Service.aspx">
+					https://www.icao.int/safety/iStars/Pages/API-Data-Service.aspx</a>.<br/><br/>
+					Cependant ces crashs ont il été très mortel ? <br/><br/>
+					Nous avons fait les diagrammes ci dessous. <br><br/>
+					le diagramme circulaire representant le nombre d'accidents total ou il y'a eu un certains nombre de pertes
+					0,1,2,3,4,5,...<br/>
+					Ainsi la majorité des crashs qu'il y a eu ne dénombre aucun mort juste des dégats matériels, ensuite vient le 
+					nombre de crashs avec 1 mort, nous en denombrons 646 crashs. Après 440 crash ont eu lieu ou il y a eu que 2 morts,
+					208 crashs avec trois mort par crash, 157 crashs avec 4 morts par crash, 102 crashs avec 5 morts par crash et 262 
+                    crashs où il y a eu plus de 5 morts par crash <br/>
+					Dans la majorité de ces crashs c'est à dire sur 7183 il n'y a pas eu de morts donc depuis depuis 2008 les crashs n'ont pas
+					été aussi mortel que ça. <br/><br/>
+
+					Ensuite sur le graphe ci-contre nous avons représenter le nombre de mort par année. Ce graphe est interactif, ainsi en sélectionnant
+					un range d'année, le diagramme circulaire change en fonction de la période selectionnée. <br/>
+
+				</p>
 				
 				<div id="fatality-chart">
 					<span>
@@ -86,7 +106,6 @@
 						</center>
 					</span>
 				</div>
-				
 			
 				<div id="date-chart">
 					<span>
@@ -99,89 +118,76 @@
 				
 				<div id="phase-chart">
 					<span>
+						<p>Maintenant si nous faisons une statistique des crashs suivant les  phases de vols,
+					Si nous classons les phases dans l'ordre décroissant,la phase les plus critique est la phase d'attérissage où on 
+					dénombre le plus de crash, ensuite vient la phase pendant le roulage suivi de la phase de manoeuvre et de la
+					phase d'approche de l'avion. Après nous avons la phase de décollage suivi des autres phases de vols. 
+					Le diagramme en bâton ci dessous réprésente donc cette statistique et on peut toujours utiliser le diagramme
+					de range des années pour avoir un diagramme en fonction du range selectionné. 
+				    </p>
+		
 						<center>
+						   
 							<b>Number of flight accidents per flight phases </b>
+							
 							<a class='reset' href='javascript:phaseChart.filterAll();dc.redrawAll();'>reset</a>
 						</center>
 				    </span>
-				</div>
-				  
-			    <div id="occurrence-chart">
-					<span>
-						<center>
-							<b>Occurrences </b>
-							<a class='reset' href='javascript:occurrenceChart.filterAll();dc.redrawAll();'>reset</a>
-						</center>
-				    </span>
+					vols commerciaux ?
 				</div>
 				
-				<div id="registry-chart">
+				
+				
+			
+				  
+				<div id="gain-loss-chart">
 					<span>
 						<center>
-							<b>Registries </b>
-							<a class='reset' href='javascript:registryChart.filterAll();dc.redrawAll();'>reset</a>
+							<b>Days by Gain/Loss</b>
+							<a class="reset" href="javascript:gainOrLossChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
 						</center>
-				    </span>
+					</span>
 				</div>
+				
+				<div id="day-of-week-chart">
+					<span>
+						<center>
+							<b>Day of Week</b>
+							<a class="reset" href="javascript:dayOfWeekChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+						</center>
+					</span>
+				</div>
+				
+				<div id="monthly-volume-chart">
+					<span>
+						<center>
+							<b>Timeline</b>
+							<span class="reset" style="display: none;">range: <span class="filter"></span></span>
+							<a class="reset" href="javascript:volumeChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+					
+					
+				</div>
+				<p class="muted pull-right" style="margin-right: 15px;">select a time range to zoom in</p>
+				
+				<div>
+					<div class="dc-data-count">
+						<span class="filter-count"></span> selected out of <span class="total-count"></span> records | <a
+							href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
+					</div>
+				</div>
+				<table class="table table-hover dc-data-table"></table>
 				
 			  </p>
             </div>
         </div>
           <!--</div>-->
       </div>
-	  <div class="row">
-		<div id="gain-loss-chart">
-			<strong>Days by Gain/Loss</strong>
-			<a class="reset" href="javascript:gainOrLossChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
-
-			<div class="clearfix"></div>
-		</div>
-
-		<div id="day-of-week-chart">
-			<strong>Day of Week</strong>
-			<a class="reset" href="javascript:dayOfWeekChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
-
-			<div class="clearfix"></div>
-		</div>
-
-	</div>
-
-	<div class="row">
-		<div id="monthly-volume-chart">
-				<strong>Timeline</strong>
-				<span class="reset" style="display: none;">range: <span class="filter"></span></span>
-				<a class="reset" href="javascript:volumeChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
-				
-				<div class="clearfix"></div>
-		</div>
-		<p class="muted pull-right" style="margin-right: 15px;">select a time range to zoom in</p>
-	</div>
-
-	<div class="row">
-		<div>
-			<div class="dc-data-count">
-				<span class="filter-count"></span> selected out of <span class="total-count"></span> records | <a
-					href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
-			</div>
-		</div>
-		<table class="table table-hover dc-data-table">
-		</table>
-	</div>
-
-	<div class="clearfix"></div>
+	
 
 	</div>
 
 	</div>
     </section>
-
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; thuy-my.github.io 2017</p>
-      </div>
-      <!-- /.container -->
-    </footer>
 
 	<!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -209,5 +215,15 @@
 	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.0-dev/dc.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/dc/1.6.0/dc.css"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>-->
+	
+	<!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; ounon.github.io 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
 
   </body>
+   
+ </html>

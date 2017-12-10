@@ -37,6 +37,8 @@ var volumeChart = dc.barChart('#monthly-volume-chart');
              .attr('width', width)
              .attr('height', height);
 
+ $("svg").css({top: 3000, left: 450, position:'absolute'});
+ 
  var projection = d3.geo.mercator().translate([width/2, height/2]).scale(125);
  var path = d3.geo.path().projection(projection);  
  
@@ -316,6 +318,7 @@ d3.csv('/data/data-crashes.csv', function (data) {
         // render bar 
         //renderBars(color, mapcountry);
     });
+	
         //#### Data Count
 
     // Create a data count widget and use the given css selector as anchor. You can also specify
