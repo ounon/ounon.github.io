@@ -74,7 +74,8 @@ d3.csv("/data/data-crashes.csv", function(flights) {
             .domain([new Date('2008-01-02T00:00:00.000Z'), new Date('2017-11-07T00:00:00.000Z')])
             .rangeRound([0, 10 * 50]))
         .y(d3.scale.linear()
-            .domain([0, 20]));
+            .domain([0, 20]))
+			.mouseZoomable(true);
 
         dateChart.xAxis().ticks(8);
         dateChart.yAxis().ticks(2); 

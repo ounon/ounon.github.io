@@ -34,10 +34,11 @@ var volumeChart = dc.barChart('#monthly-volume-chart');
  var svg = d3.select("body")
              .append("svg")
              .attr("id", "map")
+			 .attr("align","center")
              .attr('width', width)
              .attr('height', height);
 
- $("svg").css({top: 3000, left: 450, position:'absolute'});
+ //$("svg").css({top: 3000, left: 450, position:'absolute'});
  
  var projection = d3.geo.mercator().translate([width/2, height/2]).scale(125);
  var path = d3.geo.path().projection(projection);  
@@ -66,9 +67,10 @@ var volumeChart = dc.barChart('#monthly-volume-chart');
 
  var y = d3.scale.linear().range([svgBarsHeight, 0]);
 
- var svg_bars = d3.select("body")
+ var svg_bars = d3.select("#container")
      .append("svg")
        .attr("id", "bars")
+	   .attr("align","center")
        .attr("width", svgBarsWidth + margin.left + margin.right)
        .attr("height", svgBarsHeight + margin.top + margin.bottom)
      .append("g")
@@ -528,3 +530,5 @@ d3.csv('/data/data-crashes.csv', function (data) {
     */
 
 });
+
+document.getElementById("map").align = "center";

@@ -8,6 +8,7 @@
 		<meta name="author" content="">
 
 		<title>Digital Storytelling</title>
+		
 
 		<!-- Bootstrap core CSS -->
 		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -17,15 +18,19 @@
 		
 		<!-- dc.js css -->
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.0.2/dc.css"/>
-	
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-		
 		<link rel="stylesheet" type="text/css" href="css/dc.css"/>
+	
+		
 		
 		<style>
 			#monthly-volume-chart g.y {
 				display: none;
-			}        
+			}     
+			
+			body{
+				font-family: 'Helvetica Neue', Helvetica, sans-serif;
+				text-align: center;
+			}
 		</style>
 	
 	</head>
@@ -46,11 +51,8 @@
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item">
+			<li class="nav-item">
               <a class="nav-link" href="about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="application.html">Application</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
@@ -76,13 +78,15 @@
             <div class="p-5">
               <h3 class="display-4"></h2> <br>
               <p>
-				<p id="text">
+				<p class="h6 m-0 text-left">
 					Depuis les années 50, de nombreux crashs se sont succédés dans les quatres coins du monde causant ainsi plusieurs morts
 					et disparus. Ces crashs sont souvent du à des erreurs, des attentats, la condition météorologique... <br/>
 					Nous avons donc décidé, de faire une statistique des crashs qui ont eu lieu depuis 2008 jusqu'à aujourd'hui. Ainsi nous 
 					avons utilisé les données d'accidents fourni par le site <a href="https://www.icao.int/safety/iStars/Pages/API-Data-Service.aspx">
 					https://www.icao.int/safety/iStars/Pages/API-Data-Service.aspx</a>.<br/><br/>
-					Cependant ces crashs ont il été très mortel ? <br/><br/>
+				<p>
+				<h3>Cependant ces crashs ont il été très mortel ? </h3><br/><br/>
+				<p class="h6 m-0 text-left">
 					Nous avons fait les diagrammes ci dessous. <br><br/>
 					le diagramme circulaire representant le nombre d'accidents total ou il y'a eu un certains nombre de pertes
 					0,1,2,3,4,5,...<br/>
@@ -94,7 +98,7 @@
 					été aussi mortel que ça. <br/><br/>
 
 					Ensuite sur le graphe ci-contre nous avons représenter le nombre de mort par année. Ce graphe est interactif, ainsi en sélectionnant
-					un range d'année, le diagramme circulaire change en fonction de la période selectionnée. <br/>
+					un range d'année, le diagramme circulaire change en fonction de la période selectionnée. <br/><br/>
 
 				</p>
 				
@@ -118,12 +122,12 @@
 				
 				<div id="phase-chart">
 					<span>
-						<p>Maintenant si nous faisons une statistique des crashs suivant les  phases de vols,
+						<p class="h6 m-0 text-left"> Maintenant si nous faisons une statistique des crashs suivant les  phases de vols,
 					Si nous classons les phases dans l'ordre décroissant,la phase les plus critique est la phase d'attérissage où on 
 					dénombre le plus de crash, ensuite vient la phase pendant le roulage suivi de la phase de manoeuvre et de la
 					phase d'approche de l'avion. Après nous avons la phase de décollage suivi des autres phases de vols. 
 					Le diagramme en bâton ci dessous réprésente donc cette statistique et on peut toujours utiliser le diagramme
-					de range des années pour avoir un diagramme en fonction du range selectionné. 
+					de range des années pour avoir un diagramme en fonction du range selectionné. <br/><br/>
 				    </p>
 		
 						<center>
@@ -133,13 +137,27 @@
 							<a class='reset' href='javascript:phaseChart.filterAll();dc.redrawAll();'>reset</a>
 						</center>
 				    </span>
-					vols commerciaux ?
+					
 				</div>
+				</div></div></div>
 				
-				
-				
-			
-				  
+				      <div class="container">
+        <div class="row align-items-center">
+          <!--<div class="col-md-6">-->
+            <div class="p-5">
+				<h3> Quel a été l'impact de ces crash sur les différents types de vols ? </h3><br/>
+				<p class="h6 m-0 text-left">
+					
+					Depuis 2008, les crash ont concernés 83% des vols commerciaux, et 16% d'autre types de vols (militaires, privé...) comme
+					le montre le diagramme circulaire ci-dessous.<br/>
+					Le taux élévé de crashs de vols commerciaux pourrait se justifié du fait que la majorité des vols quotidiens sont des
+					vols commerciaux.<br/> <br/>
+					
+					Par contre le diagramme-ci contre nous montre les jours où il y a eu le plus de crash. Et comme on peut le voir Vendredi
+	                est le jour où il y a beaucoup de crash. <br/><br/>
+					Et si on selectionne un range sur le Timeline, on observe le diagrammes changé en fonctions du range sélectionné.
+					
+				</p>
 				<div id="gain-loss-chart">
 					<span>
 						<center>
@@ -148,6 +166,7 @@
 						</center>
 					</span>
 				</div>
+				
 				
 				<div id="day-of-week-chart">
 					<span>
@@ -164,8 +183,9 @@
 							<b>Timeline</b>
 							<span class="reset" style="display: none;">range: <span class="filter"></span></span>
 							<a class="reset" href="javascript:volumeChart.filterAll();dc.redrawAll();" style="display: none;">reset</a>
-					
-					
+						</center>
+					<span>
+						<div class="clearfix"></div>
 				</div>
 				<p class="muted pull-right" style="margin-right: 15px;">select a time range to zoom in</p>
 				
@@ -174,13 +194,25 @@
 						<span class="filter-count"></span> selected out of <span class="total-count"></span> records | <a
 							href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
 					</div>
+					<div class="clearfix"></div>
 				</div>
+				
 				<table class="table table-hover dc-data-table"></table>
 				
 			  </p>
+			  <p class="h6 m-0 text-left">
+				Pour finir, nous vous offrons une petite carte où l'on peut voir le nombre de crash qu'il y eu en fonction de certains 
+				pays en pointant la souris sur un pays.<br/>
+				Il est également possible de sélectionner certains pays en fonction du nombre de crash en pointant la souris sur un petit
+				carré de la légende. Le Timeline s'applique également à la carte.
+					
+				</p>
+			  
             </div>
+			  
         </div>
           <!--</div>-->
+		
       </div>
 	
 
