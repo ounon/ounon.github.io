@@ -75,7 +75,9 @@ d3.csv("/data/data-crashes.csv", function(flights) {
             .rangeRound([0, 10 * 50]))
         .y(d3.scale.linear()
             .domain([0, 20]))
-			.mouseZoomable(true);
+        .xAxisLabel('Date')
+        .yAxisLabel('# of accidents')
+		.mouseZoomable(true);
 
         dateChart.xAxis().ticks(8);
         dateChart.yAxis().ticks(2); 
@@ -92,6 +94,8 @@ d3.csv("/data/data-crashes.csv", function(flights) {
         .x(d3.scale.ordinal()
             .domain(["Standing", "Initial Climb", "Take-off", "En route", "Approach", "Taxi", "Manoeuvring", "Landing", "Unknown", "Tow", "Post-impact"]))
         .xUnits(dc.units.ordinal)
+        .xAxisLabel('Flight phases')
+        .yAxisLabel('# of accidents');
 
         phaseChart.xAxis().ticks(5);
 
